@@ -52,4 +52,15 @@ public class CompareScholarships {
         
         return scholarships;
     }
+
+	// Display all scholarships in CompareScholarships
+	public void displayAllScholarships()
+	{
+		fillScholarships();
+		for (Scholarship ss: scholarships)
+		{
+			ss.printDescription();
+			System.out.println();		
+		}
+	}
 }
