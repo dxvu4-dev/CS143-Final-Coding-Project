@@ -4,29 +4,52 @@ import java.util.ArrayList;
 public class Main {
 
 	
-	public static void main(String[] args) {
-		ArrayList<Scholarship> elegibleScholarships = new ArrayList<Scholarship>();
-		ArrayList<Scholarship> acceptedScholarships = new ArrayList<Scholarship>();
-		Scanner sc = new Scanner(System.in);
-		User user;
-		String name;
-		double GPA;
-		String race;
-		String gender;
-		double income;
-		String major;
-		boolean isFirstGen;
-		boolean isWashingtonResident;
-		double scholarshipAmount = 0; //at beginning user has no scholarships + this is for ACCEPTED scholarshisp only
-		
-		//use static methods to initialize fields to initialize user constructor
-		//For TT
-		user = new User();		// create new user object
-		char repeat = 'n';		// while-loop repeating variable 
-		do
-		{
+public static void main(String[] args) {
+	ArrayList<Scholarship> elegibleScholarships = new ArrayList<Scholarship>();
+	ArrayList<Scholarship> acceptedScholarships = new ArrayList<Scholarship>();
+	CompareScholarships compare = new CompareScholarships();
+	Scanner sc = new Scanner(System.in);
+	User user;
+	String name;
+	double GPA;
+	String race;
+	String gender;
+	double income;
+	String major;
+	boolean isFirstGen;
+	boolean isWashingtonResident;
+	double scholarshipAmount = 0; //at beginning user has no scholarships + this is for ACCEPTED scholarshisp only
+	
+	//use static methods to initialize fields to initialize user constructor
+	//For TT
+	user = new User();			// create new user object
+	boolean repeat = true;		// while-loop repeating variable 
+	do
+	{
+		System.out.println("		...::: Scholarship Menu :::...");
+		System.out.println("1. Display all eligible scholarships\n"
+						+  "2. Fill out user profile\n"
+						+  "3. Display all scholarships in system\n"
+						+  "4. View user profile\n"
+						+  "5. Continue\n");
+		System.out.print("Enter the number of choice you'd like to make: ");			
+		int choice = sc.nextInt();
+		System.out.println();
+
+		switch (choice) {
+		case 1:		// call comparescholarshisp and return elegiblescholarships and display + calculate elegiblemoneyamount
+			elegibleScholarships = compare.returnEligible(user);
+			
+			// Add up of all eligible scholarships money
+			double elegibleMoneyAmount = 0.00;
+			for (int i = 0; i < elegibleScholarships.size(); i++)
+			{
+				elegibleMoneyAmount += elegibleScholarships.get(i).getScholarshipAmount();
+			}
+			System.out.println(elegibleMoneyAmount);
+			return;
+		case 2:		// prompt user to fill out user profile
 			// Display menu prompting user for input
-			System.out.println("    ...::: User Profile :::...");
 			System.out.println("Fill out the forms below");
 			name = promptName(sc);
 			user.setName(name);
@@ -44,23 +67,23 @@ public class Main {
 			user.setIsFirstGen(isFirstGen);
 			isWashingtonResident = promptIsWashingtonResident(sc);
 			user.setIsWashingtonResident(isWashingtonResident);
-			
-
+			return;		// exit case 2
+		case 3:		// display all scholarships in system
+			compare.displayAllScholarships();
+			return;
+		case 4:		// printDescription() from user class
 			user.printDescription();			// print user profile
-			System.out.println("Continue to edit? Press 'y' otherwise press 'n'");
-			repeat = sc.next().charAt(0);
+			return;		// exit case 4sc
+		case 5:		// exit
+			repeat = false;
+			return;		// exit case 5 and do-while loop
+		default:		// loop again
 			
-			//TODO include exception handling for scanner in user profile
-			
-		} while(repeat == 'y' || repeat == 'Y');		// End of do-while menu loop
-		//For TT;
-		//case 1. call comparescholarshisp and return elegiblescholarships and display + calculate elegiblemoneyamount
-		//case 2. go one by one prompting user to fill 2nd arraylist
-		//case 3. arraylist with all from compare scholarship class
-		//case 4. call print desc from user class
-		//case 5. exit
-		//default: whatever just loop
-	}
+		}
+		//TODO include exception handling for scanner in user profile
+					
+	} while(repeat == true);		// End of do-while menu loop
+}	// End of main-class
 	
 	public static String promptName(Scanner sc) {
 		String name;
