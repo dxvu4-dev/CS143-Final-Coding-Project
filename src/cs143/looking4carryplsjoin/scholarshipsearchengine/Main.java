@@ -129,6 +129,7 @@ public class Main {
 			//TODO include exception handling for scanner in user profile
 						
 		} while(repeat == true);		// End of do-while menu loop
+		sc.close();
 	}	// End of main
 	
 	public static String promptName(Scanner sc) {
