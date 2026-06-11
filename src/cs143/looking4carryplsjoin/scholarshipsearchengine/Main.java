@@ -121,7 +121,7 @@ public class Main {
 			case 7:		// Exit program
 				repeat = false;
 				
-				break;		// exit case 7 and do-while loop
+				return;		// exit case 7 and do-while loop
 				
 			default:		// loop again
 			}
