@@ -12,13 +12,13 @@ public class CompareScholarships {
 	
 	private void fillScholarships() {
 		scholarships.add(new MicrosoftScholarship());
-		//scholarships.add(new AfricanAmericanScholarship());
+		scholarships.add(new AfricanAmericanScholarship());
 		scholarships.add(new AsianAmericanScholarship());
-		//scholarships.add(new BusinessScholarship());
+		scholarships.add(new BusinessScholarship());
 		scholarships.add(new EverettScholarship());
 		scholarships.add(new LynnwoodScholarship());
 		scholarships.add(new MukilteoScholarship());
-		//scholarships.add(new NursingScholarship());
+		scholarships.add(new NursingScholarship());
 		scholarships.add(new WashingtonScholarship());
 		scholarships.add(new WomenInStemScholarship());
 	}
