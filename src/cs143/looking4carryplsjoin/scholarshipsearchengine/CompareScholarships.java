@@ -27,8 +27,8 @@ public class CompareScholarships {
     //if user is first gen and scholarship requires not first gen
     public ArrayList<Scholarship> returnEligible(User user) {
 		fillScholarships();
-        boolean eligibleForScholarship = true;
         for (Scholarship ss : scholarships) {
+            boolean eligibleForScholarship = true;
             if (user.getGPA() <= ss.getGPA()) {
                 eligibleForScholarship = false;
             }
