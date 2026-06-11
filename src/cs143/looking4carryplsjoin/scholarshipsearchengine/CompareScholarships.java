@@ -5,6 +5,10 @@ public class CompareScholarships {
 	//private fields
 	ArrayList<Scholarship> scholarships = new ArrayList<Scholarship>();
     ArrayList<Scholarship> eligibleSchol = new ArrayList<Scholarship>();
+
+	CompareScholarships() {
+		fillScholarships();
+	}
 	
 	private void fillScholarships() {
 		scholarships.add(new MicrosoftScholarship());
@@ -26,7 +30,6 @@ public class CompareScholarships {
     //if user is not WA resident and scholarship requires WA residence
     //if user is first gen and scholarship requires not first gen
     public ArrayList<Scholarship> returnEligible(User user) {
-		fillScholarships();
         for (Scholarship ss : scholarships) {
             boolean eligibleForScholarship = true;
             if (user.getGPA() <= ss.getGPA()) {
