@@ -35,13 +35,13 @@ public class CompareScholarships {
             else if (user.getIncome() >= ss.getIncome()) {
                 eligibleForScholarship = false;
             }
-            else if ((!ss.getRace().toLowerCase().equals("any")) && (!ss.getRace().toLowerCase().equals(user.getRace()))) {
+            else if ((!ss.getRace().equals("Any")) && (!ss.getRace().equals(user.getRace()))) {
                 eligibleForScholarship = false;
             }
-            else if ((!ss.getGender().toLowerCase().equals("any")) && (!ss.getGender().toLowerCase().equals(user.getGender()))) {
+            else if ((!ss.getGender().equals("Any")) && (!ss.getGender().equals(user.getGender()))) {
                 eligibleForScholarship = false;
             }
-            else if ((!ss.getMajor().toLowerCase().equals("any")) && (!ss.getMajor().toLowerCase().equals(user.getMajor()))) {
+            else if ((!ss.getMajor().equals("Any")) && (!ss.getMajor().equalsIgnoreCase(user.getMajor()))) {
                 eligibleForScholarship = false;
             }
             else if ((user.getIsWashingtonResident() == false) && (ss.getIsWashingtonResident() == true)) {
