@@ -82,6 +82,7 @@ public class Main {
 				for (int i = 0; i < elegibleScholarships.size(); i++)
 				{
 					elegibleScholarships.get(i).printDescription();
+					System.out.println();
 					elegibleMoneyAmount += elegibleScholarships.get(i).getScholarshipAmount();
 				}
 				System.out.println("You're eligible for $" + elegibleMoneyAmount + " total!");
