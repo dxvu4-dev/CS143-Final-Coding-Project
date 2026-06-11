@@ -50,7 +50,7 @@ public class CompareScholarships {
             else if ((user.getIsFirstGen() == true) && (ss.getIsFirstGen() == false)) {
                 eligibleForScholarship = false;
             }
-            if (eligibleForScholarship = true) {
+            if (eligibleForScholarship == true) {
                 eligibleSchol.add(ss);
             }
         }
