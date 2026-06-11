@@ -7,9 +7,9 @@ public class WashingtonScholarship extends Scholarship {
 
 	@Override
 	public void printDescription() {
-		System.out.print("Washington Scholarship");
-		System.out.print("Minimum GPA: 2.5");
-		System.out.print("Major: Any");
+		System.out.println("Washington Scholarship");
+		System.out.println("Minimum GPA: 2.5");
+		System.out.println("Major: Any");
 		System.out.println("Award Amount: $3000");
 		
 	}
