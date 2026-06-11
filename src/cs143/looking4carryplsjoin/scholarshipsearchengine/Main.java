@@ -78,8 +78,10 @@ public class Main {
 			case 4:		// View eligible scholarships to user and print out total eligible amount of scholarship money			
 				// Add up all of eligible scholarships money
 				double elegibleMoneyAmount = 0.00;
+				System.out.println("	...::: Eligible Scholarships :::...");
 				for (int i = 0; i < elegibleScholarships.size(); i++)
 				{
+					elegibleScholarships.get(i).printDescription();
 					elegibleMoneyAmount += elegibleScholarships.get(i).getScholarshipAmount();
 				}
 				System.out.println("You're eligible for $" + elegibleMoneyAmount + " total!");
